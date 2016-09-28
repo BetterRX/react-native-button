@@ -21,7 +21,7 @@ var Button = React.createClass({
     style: Text.propTypes.style,
     styleDisabled: Text.propTypes.style,
   },
-  
+
   render() {
     var touchableProps = {
       activeOpacity: this._computeActiveOpacity(),
@@ -34,7 +34,7 @@ var Button = React.createClass({
     }
 
     return (
-      <TouchableOpacity {...touchableProps} testID={this.props.testID} style={this.props.containerStyle}>          
+      <TouchableOpacity {...touchableProps} testID={this.props.testID} style={this.props.containerStyle}>
         {this._renderGroupedChildren()}
       </TouchableOpacity>
     );
@@ -51,7 +51,7 @@ var Button = React.createClass({
 
     var children = coalesceNonElementChildren(this.props.children, (children, index) => {
       return (
-        <Text key={index} style={style}>
+        <Text allowFontScaling={this.props.allowFontScaling} key={index} style={style}>
           {children}
         </Text>
       );
